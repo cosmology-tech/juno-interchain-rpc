@@ -1,5 +1,5 @@
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Long } from "../../../helpers";
+import { Long } from "../../../helpers";
 /** Minter represents the minting state. */
 export interface Minter {
     /** current annual inflation rate */
@@ -47,10 +47,10 @@ export interface ParamsSDKType {
 export declare const Minter: {
     encode(message: Minter, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Minter;
-    fromPartial(object: DeepPartial<Minter>): Minter;
+    fromPartial(object: Partial<Minter>): Minter;
 };
 export declare const Params: {
     encode(message: Params, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Params;
-    fromPartial(object: DeepPartial<Params>): Params;
+    fromPartial(object: Partial<Params>): Params;
 };

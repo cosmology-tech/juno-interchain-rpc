@@ -1,6 +1,5 @@
 import { Params, ParamsSDKType } from "./mint";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial } from "../../../helpers";
 /** QueryParamsRequest is the request type for the Query/Params RPC method. */
 export interface QueryParamsRequest {
 }
@@ -10,12 +9,12 @@ export interface QueryParamsRequestSDKType {
 /** QueryParamsResponse is the response type for the Query/Params RPC method. */
 export interface QueryParamsResponse {
     /** params defines the parameters of the module. */
-    params: Params;
+    params?: Params;
 }
 /** QueryParamsResponse is the response type for the Query/Params RPC method. */
 export interface QueryParamsResponseSDKType {
     /** params defines the parameters of the module. */
-    params: ParamsSDKType;
+    params?: ParamsSDKType;
 }
 /** QueryInflationRequest is the request type for the Query/Inflation RPC method. */
 export interface QueryInflationRequest {
@@ -70,30 +69,30 @@ export interface QueryAnnualProvisionsResponseSDKType {
 export declare const QueryParamsRequest: {
     encode(_: QueryParamsRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest;
-    fromPartial(_: DeepPartial<QueryParamsRequest>): QueryParamsRequest;
+    fromPartial(_: Partial<QueryParamsRequest>): QueryParamsRequest;
 };
 export declare const QueryParamsResponse: {
     encode(message: QueryParamsResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsResponse;
-    fromPartial(object: DeepPartial<QueryParamsResponse>): QueryParamsResponse;
+    fromPartial(object: Partial<QueryParamsResponse>): QueryParamsResponse;
 };
 export declare const QueryInflationRequest: {
     encode(_: QueryInflationRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryInflationRequest;
-    fromPartial(_: DeepPartial<QueryInflationRequest>): QueryInflationRequest;
+    fromPartial(_: Partial<QueryInflationRequest>): QueryInflationRequest;
 };
 export declare const QueryInflationResponse: {
     encode(message: QueryInflationResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryInflationResponse;
-    fromPartial(object: DeepPartial<QueryInflationResponse>): QueryInflationResponse;
+    fromPartial(object: Partial<QueryInflationResponse>): QueryInflationResponse;
 };
 export declare const QueryAnnualProvisionsRequest: {
     encode(_: QueryAnnualProvisionsRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryAnnualProvisionsRequest;
-    fromPartial(_: DeepPartial<QueryAnnualProvisionsRequest>): QueryAnnualProvisionsRequest;
+    fromPartial(_: Partial<QueryAnnualProvisionsRequest>): QueryAnnualProvisionsRequest;
 };
 export declare const QueryAnnualProvisionsResponse: {
     encode(message: QueryAnnualProvisionsResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryAnnualProvisionsResponse;
-    fromPartial(object: DeepPartial<QueryAnnualProvisionsResponse>): QueryAnnualProvisionsResponse;
+    fromPartial(object: Partial<QueryAnnualProvisionsResponse>): QueryAnnualProvisionsResponse;
 };

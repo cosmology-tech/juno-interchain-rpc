@@ -1,30 +1,29 @@
 import { Description, DescriptionSDKType, CommissionRates, CommissionRatesSDKType } from "./staking";
 import { Any, AnySDKType } from "../../../google/protobuf/any";
 import { Coin, CoinSDKType } from "../../base/v1beta1/coin";
-import { Timestamp } from "../../../google/protobuf/timestamp";
+import { Timestamp, TimestampSDKType } from "../../../google/protobuf/timestamp";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, toTimestamp, fromTimestamp } from "../../../helpers";
 /** MsgCreateValidator defines a SDK message for creating a new validator. */
 
 export interface MsgCreateValidator {
-  description: Description;
-  commission: CommissionRates;
+  description?: Description;
+  commission?: CommissionRates;
   minSelfDelegation: string;
   delegatorAddress: string;
   validatorAddress: string;
-  pubkey: Any;
-  value: Coin;
+  pubkey?: Any;
+  value?: Coin;
 }
 /** MsgCreateValidator defines a SDK message for creating a new validator. */
 
 export interface MsgCreateValidatorSDKType {
-  description: DescriptionSDKType;
-  commission: CommissionRatesSDKType;
+  description?: DescriptionSDKType;
+  commission?: CommissionRatesSDKType;
   min_self_delegation: string;
   delegator_address: string;
   validator_address: string;
-  pubkey: AnySDKType;
-  value: CoinSDKType;
+  pubkey?: AnySDKType;
+  value?: CoinSDKType;
 }
 /** MsgCreateValidatorResponse defines the Msg/CreateValidator response type. */
 
@@ -35,7 +34,7 @@ export interface MsgCreateValidatorResponseSDKType {}
 /** MsgEditValidator defines a SDK message for editing an existing validator. */
 
 export interface MsgEditValidator {
-  description: Description;
+  description?: Description;
   validatorAddress: string;
   /**
    * We pass a reference to the new commission rate and min self delegation as
@@ -50,7 +49,7 @@ export interface MsgEditValidator {
 /** MsgEditValidator defines a SDK message for editing an existing validator. */
 
 export interface MsgEditValidatorSDKType {
-  description: DescriptionSDKType;
+  description?: DescriptionSDKType;
   validator_address: string;
   /**
    * We pass a reference to the new commission rate and min self delegation as
@@ -76,7 +75,7 @@ export interface MsgEditValidatorResponseSDKType {}
 export interface MsgDelegate {
   delegatorAddress: string;
   validatorAddress: string;
-  amount: Coin;
+  amount?: Coin;
 }
 /**
  * MsgDelegate defines a SDK message for performing a delegation of coins
@@ -86,7 +85,7 @@ export interface MsgDelegate {
 export interface MsgDelegateSDKType {
   delegator_address: string;
   validator_address: string;
-  amount: CoinSDKType;
+  amount?: CoinSDKType;
 }
 /** MsgDelegateResponse defines the Msg/Delegate response type. */
 
@@ -103,7 +102,7 @@ export interface MsgBeginRedelegate {
   delegatorAddress: string;
   validatorSrcAddress: string;
   validatorDstAddress: string;
-  amount: Coin;
+  amount?: Coin;
 }
 /**
  * MsgBeginRedelegate defines a SDK message for performing a redelegation
@@ -114,17 +113,17 @@ export interface MsgBeginRedelegateSDKType {
   delegator_address: string;
   validator_src_address: string;
   validator_dst_address: string;
-  amount: CoinSDKType;
+  amount?: CoinSDKType;
 }
 /** MsgBeginRedelegateResponse defines the Msg/BeginRedelegate response type. */
 
 export interface MsgBeginRedelegateResponse {
-  completionTime: Date;
+  completionTime?: Timestamp;
 }
 /** MsgBeginRedelegateResponse defines the Msg/BeginRedelegate response type. */
 
 export interface MsgBeginRedelegateResponseSDKType {
-  completion_time: Date;
+  completion_time?: TimestampSDKType;
 }
 /**
  * MsgUndelegate defines a SDK message for performing an undelegation from a
@@ -134,7 +133,7 @@ export interface MsgBeginRedelegateResponseSDKType {
 export interface MsgUndelegate {
   delegatorAddress: string;
   validatorAddress: string;
-  amount: Coin;
+  amount?: Coin;
 }
 /**
  * MsgUndelegate defines a SDK message for performing an undelegation from a
@@ -144,17 +143,17 @@ export interface MsgUndelegate {
 export interface MsgUndelegateSDKType {
   delegator_address: string;
   validator_address: string;
-  amount: CoinSDKType;
+  amount?: CoinSDKType;
 }
 /** MsgUndelegateResponse defines the Msg/Undelegate response type. */
 
 export interface MsgUndelegateResponse {
-  completionTime: Date;
+  completionTime?: Timestamp;
 }
 /** MsgUndelegateResponse defines the Msg/Undelegate response type. */
 
 export interface MsgUndelegateResponseSDKType {
-  completion_time: Date;
+  completion_time?: TimestampSDKType;
 }
 
 function createBaseMsgCreateValidator(): MsgCreateValidator {
@@ -248,7 +247,7 @@ export const MsgCreateValidator = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<MsgCreateValidator>): MsgCreateValidator {
+  fromPartial(object: Partial<MsgCreateValidator>): MsgCreateValidator {
     const message = createBaseMsgCreateValidator();
     message.description = object.description !== undefined && object.description !== null ? Description.fromPartial(object.description) : undefined;
     message.commission = object.commission !== undefined && object.commission !== null ? CommissionRates.fromPartial(object.commission) : undefined;
@@ -289,7 +288,7 @@ export const MsgCreateValidatorResponse = {
     return message;
   },
 
-  fromPartial(_: DeepPartial<MsgCreateValidatorResponse>): MsgCreateValidatorResponse {
+  fromPartial(_: Partial<MsgCreateValidatorResponse>): MsgCreateValidatorResponse {
     const message = createBaseMsgCreateValidatorResponse();
     return message;
   }
@@ -360,7 +359,7 @@ export const MsgEditValidator = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<MsgEditValidator>): MsgEditValidator {
+  fromPartial(object: Partial<MsgEditValidator>): MsgEditValidator {
     const message = createBaseMsgEditValidator();
     message.description = object.description !== undefined && object.description !== null ? Description.fromPartial(object.description) : undefined;
     message.validatorAddress = object.validatorAddress ?? "";
@@ -398,7 +397,7 @@ export const MsgEditValidatorResponse = {
     return message;
   },
 
-  fromPartial(_: DeepPartial<MsgEditValidatorResponse>): MsgEditValidatorResponse {
+  fromPartial(_: Partial<MsgEditValidatorResponse>): MsgEditValidatorResponse {
     const message = createBaseMsgEditValidatorResponse();
     return message;
   }
@@ -460,7 +459,7 @@ export const MsgDelegate = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<MsgDelegate>): MsgDelegate {
+  fromPartial(object: Partial<MsgDelegate>): MsgDelegate {
     const message = createBaseMsgDelegate();
     message.delegatorAddress = object.delegatorAddress ?? "";
     message.validatorAddress = object.validatorAddress ?? "";
@@ -497,7 +496,7 @@ export const MsgDelegateResponse = {
     return message;
   },
 
-  fromPartial(_: DeepPartial<MsgDelegateResponse>): MsgDelegateResponse {
+  fromPartial(_: Partial<MsgDelegateResponse>): MsgDelegateResponse {
     const message = createBaseMsgDelegateResponse();
     return message;
   }
@@ -568,7 +567,7 @@ export const MsgBeginRedelegate = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<MsgBeginRedelegate>): MsgBeginRedelegate {
+  fromPartial(object: Partial<MsgBeginRedelegate>): MsgBeginRedelegate {
     const message = createBaseMsgBeginRedelegate();
     message.delegatorAddress = object.delegatorAddress ?? "";
     message.validatorSrcAddress = object.validatorSrcAddress ?? "";
@@ -588,7 +587,7 @@ function createBaseMsgBeginRedelegateResponse(): MsgBeginRedelegateResponse {
 export const MsgBeginRedelegateResponse = {
   encode(message: MsgBeginRedelegateResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.completionTime !== undefined) {
-      Timestamp.encode(toTimestamp(message.completionTime), writer.uint32(10).fork()).ldelim();
+      Timestamp.encode(message.completionTime, writer.uint32(10).fork()).ldelim();
     }
 
     return writer;
@@ -604,7 +603,7 @@ export const MsgBeginRedelegateResponse = {
 
       switch (tag >>> 3) {
         case 1:
-          message.completionTime = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.completionTime = Timestamp.decode(reader, reader.uint32());
           break;
 
         default:
@@ -616,9 +615,9 @@ export const MsgBeginRedelegateResponse = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<MsgBeginRedelegateResponse>): MsgBeginRedelegateResponse {
+  fromPartial(object: Partial<MsgBeginRedelegateResponse>): MsgBeginRedelegateResponse {
     const message = createBaseMsgBeginRedelegateResponse();
-    message.completionTime = object.completionTime ?? undefined;
+    message.completionTime = object.completionTime !== undefined && object.completionTime !== null ? Timestamp.fromPartial(object.completionTime) : undefined;
     return message;
   }
 
@@ -679,7 +678,7 @@ export const MsgUndelegate = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<MsgUndelegate>): MsgUndelegate {
+  fromPartial(object: Partial<MsgUndelegate>): MsgUndelegate {
     const message = createBaseMsgUndelegate();
     message.delegatorAddress = object.delegatorAddress ?? "";
     message.validatorAddress = object.validatorAddress ?? "";
@@ -698,7 +697,7 @@ function createBaseMsgUndelegateResponse(): MsgUndelegateResponse {
 export const MsgUndelegateResponse = {
   encode(message: MsgUndelegateResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.completionTime !== undefined) {
-      Timestamp.encode(toTimestamp(message.completionTime), writer.uint32(10).fork()).ldelim();
+      Timestamp.encode(message.completionTime, writer.uint32(10).fork()).ldelim();
     }
 
     return writer;
@@ -714,7 +713,7 @@ export const MsgUndelegateResponse = {
 
       switch (tag >>> 3) {
         case 1:
-          message.completionTime = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.completionTime = Timestamp.decode(reader, reader.uint32());
           break;
 
         default:
@@ -726,9 +725,9 @@ export const MsgUndelegateResponse = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<MsgUndelegateResponse>): MsgUndelegateResponse {
+  fromPartial(object: Partial<MsgUndelegateResponse>): MsgUndelegateResponse {
     const message = createBaseMsgUndelegateResponse();
-    message.completionTime = object.completionTime ?? undefined;
+    message.completionTime = object.completionTime !== undefined && object.completionTime !== null ? Timestamp.fromPartial(object.completionTime) : undefined;
     return message;
   }
 

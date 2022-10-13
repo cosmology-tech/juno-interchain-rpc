@@ -13,75 +13,47 @@ export declare namespace juno {
         QueryParamsRequest: {
             encode(_: _47.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryParamsRequest;
-            fromPartial(_: {}): _47.QueryParamsRequest;
+            fromPartial(_: Partial<_47.QueryParamsRequest>): _47.QueryParamsRequest;
         };
         QueryParamsResponse: {
             encode(message: _47.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryParamsResponse;
-            fromPartial(object: {
-                params?: {
-                    mintDenom?: string;
-                    blocksPerYear?: any;
-                };
-            }): _47.QueryParamsResponse;
+            fromPartial(object: Partial<_47.QueryParamsResponse>): _47.QueryParamsResponse;
         };
         QueryInflationRequest: {
             encode(_: _47.QueryInflationRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryInflationRequest;
-            fromPartial(_: {}): _47.QueryInflationRequest;
+            fromPartial(_: Partial<_47.QueryInflationRequest>): _47.QueryInflationRequest;
         };
         QueryInflationResponse: {
             encode(message: _47.QueryInflationResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryInflationResponse;
-            fromPartial(object: {
-                inflation?: Uint8Array;
-            }): _47.QueryInflationResponse;
+            fromPartial(object: Partial<_47.QueryInflationResponse>): _47.QueryInflationResponse;
         };
         QueryAnnualProvisionsRequest: {
             encode(_: _47.QueryAnnualProvisionsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryAnnualProvisionsRequest;
-            fromPartial(_: {}): _47.QueryAnnualProvisionsRequest;
+            fromPartial(_: Partial<_47.QueryAnnualProvisionsRequest>): _47.QueryAnnualProvisionsRequest;
         };
         QueryAnnualProvisionsResponse: {
             encode(message: _47.QueryAnnualProvisionsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryAnnualProvisionsResponse;
-            fromPartial(object: {
-                annualProvisions?: Uint8Array;
-            }): _47.QueryAnnualProvisionsResponse;
+            fromPartial(object: Partial<_47.QueryAnnualProvisionsResponse>): _47.QueryAnnualProvisionsResponse;
         };
         Minter: {
             encode(message: _46.Minter, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _46.Minter;
-            fromPartial(object: {
-                inflation?: string;
-                phase?: any;
-                startPhaseBlock?: any;
-                annualProvisions?: string;
-            }): _46.Minter;
+            fromPartial(object: Partial<_46.Minter>): _46.Minter;
         };
         Params: {
             encode(message: _46.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _46.Params;
-            fromPartial(object: {
-                mintDenom?: string;
-                blocksPerYear?: any;
-            }): _46.Params;
+            fromPartial(object: Partial<_46.Params>): _46.Params;
         };
         GenesisState: {
             encode(message: _45.GenesisState, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
             decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _45.GenesisState;
-            fromPartial(object: {
-                minter?: {
-                    inflation?: string;
-                    phase?: any;
-                    startPhaseBlock?: any;
-                    annualProvisions?: string;
-                };
-                params?: {
-                    mintDenom?: string;
-                    blocksPerYear?: any;
-                };
-            }): _45.GenesisState;
+            fromPartial(object: Partial<_45.GenesisState>): _45.GenesisState;
         };
     };
     const ClientFactory: {

@@ -1,9 +1,9 @@
 import { Coin, CoinSDKType } from "../../base/v1beta1/coin";
 import { Any, AnySDKType } from "../../../google/protobuf/any";
-import { Timestamp } from "../../../google/protobuf/timestamp";
+import { Timestamp, TimestampSDKType } from "../../../google/protobuf/timestamp";
 import { Duration, DurationSDKType } from "../../../google/protobuf/duration";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Long, toTimestamp, fromTimestamp } from "../../../helpers";
+import { Long } from "../../../helpers";
 /** VoteOption enumerates the valid vote options for a given governance proposal. */
 
 export enum VoteOption {
@@ -285,7 +285,7 @@ export interface DepositSDKType {
 
 export interface Proposal {
   proposalId: Long;
-  content: Any;
+  content?: Any;
   status: ProposalStatus;
   /**
    * final_tally_result is the final tally result of the proposal. When
@@ -293,18 +293,18 @@ export interface Proposal {
    * proposal's voting period has ended.
    */
 
-  finalTallyResult: TallyResult;
-  submitTime: Date;
-  depositEndTime: Date;
+  finalTallyResult?: TallyResult;
+  submitTime?: Timestamp;
+  depositEndTime?: Timestamp;
   totalDeposit: Coin[];
-  votingStartTime: Date;
-  votingEndTime: Date;
+  votingStartTime?: Timestamp;
+  votingEndTime?: Timestamp;
 }
 /** Proposal defines the core field members of a governance proposal. */
 
 export interface ProposalSDKType {
   proposal_id: Long;
-  content: AnySDKType;
+  content?: AnySDKType;
   status: ProposalStatusSDKType;
   /**
    * final_tally_result is the final tally result of the proposal. When
@@ -312,12 +312,12 @@ export interface ProposalSDKType {
    * proposal's voting period has ended.
    */
 
-  final_tally_result: TallyResultSDKType;
-  submit_time: Date;
-  deposit_end_time: Date;
+  final_tally_result?: TallyResultSDKType;
+  submit_time?: TimestampSDKType;
+  deposit_end_time?: TimestampSDKType;
   total_deposit: CoinSDKType[];
-  voting_start_time: Date;
-  voting_end_time: Date;
+  voting_start_time?: TimestampSDKType;
+  voting_end_time?: TimestampSDKType;
 }
 /** TallyResult defines a standard tally for a governance proposal. */
 
@@ -387,7 +387,7 @@ export interface DepositParams {
    *  months.
    */
 
-  maxDepositPeriod: Duration;
+  maxDepositPeriod?: Duration;
 }
 /** DepositParams defines the params for deposits on governance proposals. */
 
@@ -399,19 +399,19 @@ export interface DepositParamsSDKType {
    *  months.
    */
 
-  max_deposit_period: DurationSDKType;
+  max_deposit_period?: DurationSDKType;
 }
 /** VotingParams defines the params for voting on governance proposals. */
 
 export interface VotingParams {
   /** Length of the voting period. */
-  votingPeriod: Duration;
+  votingPeriod?: Duration;
 }
 /** VotingParams defines the params for voting on governance proposals. */
 
 export interface VotingParamsSDKType {
   /** Length of the voting period. */
-  voting_period: DurationSDKType;
+  voting_period?: DurationSDKType;
 }
 /** TallyParams defines the params for tallying votes on governance proposals. */
 
@@ -496,7 +496,7 @@ export const WeightedVoteOption = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<WeightedVoteOption>): WeightedVoteOption {
+  fromPartial(object: Partial<WeightedVoteOption>): WeightedVoteOption {
     const message = createBaseWeightedVoteOption();
     message.option = object.option ?? 0;
     message.weight = object.weight ?? "";
@@ -551,7 +551,7 @@ export const TextProposal = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<TextProposal>): TextProposal {
+  fromPartial(object: Partial<TextProposal>): TextProposal {
     const message = createBaseTextProposal();
     message.title = object.title ?? "";
     message.description = object.description ?? "";
@@ -615,7 +615,7 @@ export const Deposit = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<Deposit>): Deposit {
+  fromPartial(object: Partial<Deposit>): Deposit {
     const message = createBaseDeposit();
     message.proposalId = object.proposalId !== undefined && object.proposalId !== null ? Long.fromValue(object.proposalId) : Long.UZERO;
     message.depositor = object.depositor ?? "";
@@ -658,11 +658,11 @@ export const Proposal = {
     }
 
     if (message.submitTime !== undefined) {
-      Timestamp.encode(toTimestamp(message.submitTime), writer.uint32(42).fork()).ldelim();
+      Timestamp.encode(message.submitTime, writer.uint32(42).fork()).ldelim();
     }
 
     if (message.depositEndTime !== undefined) {
-      Timestamp.encode(toTimestamp(message.depositEndTime), writer.uint32(50).fork()).ldelim();
+      Timestamp.encode(message.depositEndTime, writer.uint32(50).fork()).ldelim();
     }
 
     for (const v of message.totalDeposit) {
@@ -670,11 +670,11 @@ export const Proposal = {
     }
 
     if (message.votingStartTime !== undefined) {
-      Timestamp.encode(toTimestamp(message.votingStartTime), writer.uint32(66).fork()).ldelim();
+      Timestamp.encode(message.votingStartTime, writer.uint32(66).fork()).ldelim();
     }
 
     if (message.votingEndTime !== undefined) {
-      Timestamp.encode(toTimestamp(message.votingEndTime), writer.uint32(74).fork()).ldelim();
+      Timestamp.encode(message.votingEndTime, writer.uint32(74).fork()).ldelim();
     }
 
     return writer;
@@ -706,11 +706,11 @@ export const Proposal = {
           break;
 
         case 5:
-          message.submitTime = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.submitTime = Timestamp.decode(reader, reader.uint32());
           break;
 
         case 6:
-          message.depositEndTime = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.depositEndTime = Timestamp.decode(reader, reader.uint32());
           break;
 
         case 7:
@@ -718,11 +718,11 @@ export const Proposal = {
           break;
 
         case 8:
-          message.votingStartTime = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.votingStartTime = Timestamp.decode(reader, reader.uint32());
           break;
 
         case 9:
-          message.votingEndTime = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.votingEndTime = Timestamp.decode(reader, reader.uint32());
           break;
 
         default:
@@ -734,17 +734,17 @@ export const Proposal = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<Proposal>): Proposal {
+  fromPartial(object: Partial<Proposal>): Proposal {
     const message = createBaseProposal();
     message.proposalId = object.proposalId !== undefined && object.proposalId !== null ? Long.fromValue(object.proposalId) : Long.UZERO;
     message.content = object.content !== undefined && object.content !== null ? Any.fromPartial(object.content) : undefined;
     message.status = object.status ?? 0;
     message.finalTallyResult = object.finalTallyResult !== undefined && object.finalTallyResult !== null ? TallyResult.fromPartial(object.finalTallyResult) : undefined;
-    message.submitTime = object.submitTime ?? undefined;
-    message.depositEndTime = object.depositEndTime ?? undefined;
+    message.submitTime = object.submitTime !== undefined && object.submitTime !== null ? Timestamp.fromPartial(object.submitTime) : undefined;
+    message.depositEndTime = object.depositEndTime !== undefined && object.depositEndTime !== null ? Timestamp.fromPartial(object.depositEndTime) : undefined;
     message.totalDeposit = object.totalDeposit?.map(e => Coin.fromPartial(e)) || [];
-    message.votingStartTime = object.votingStartTime ?? undefined;
-    message.votingEndTime = object.votingEndTime ?? undefined;
+    message.votingStartTime = object.votingStartTime !== undefined && object.votingStartTime !== null ? Timestamp.fromPartial(object.votingStartTime) : undefined;
+    message.votingEndTime = object.votingEndTime !== undefined && object.votingEndTime !== null ? Timestamp.fromPartial(object.votingEndTime) : undefined;
     return message;
   }
 
@@ -814,7 +814,7 @@ export const TallyResult = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<TallyResult>): TallyResult {
+  fromPartial(object: Partial<TallyResult>): TallyResult {
     const message = createBaseTallyResult();
     message.yes = object.yes ?? "";
     message.abstain = object.abstain ?? "";
@@ -889,7 +889,7 @@ export const Vote = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<Vote>): Vote {
+  fromPartial(object: Partial<Vote>): Vote {
     const message = createBaseVote();
     message.proposalId = object.proposalId !== undefined && object.proposalId !== null ? Long.fromValue(object.proposalId) : Long.UZERO;
     message.voter = object.voter ?? "";
@@ -946,7 +946,7 @@ export const DepositParams = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<DepositParams>): DepositParams {
+  fromPartial(object: Partial<DepositParams>): DepositParams {
     const message = createBaseDepositParams();
     message.minDeposit = object.minDeposit?.map(e => Coin.fromPartial(e)) || [];
     message.maxDepositPeriod = object.maxDepositPeriod !== undefined && object.maxDepositPeriod !== null ? Duration.fromPartial(object.maxDepositPeriod) : undefined;
@@ -992,7 +992,7 @@ export const VotingParams = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<VotingParams>): VotingParams {
+  fromPartial(object: Partial<VotingParams>): VotingParams {
     const message = createBaseVotingParams();
     message.votingPeriod = object.votingPeriod !== undefined && object.votingPeriod !== null ? Duration.fromPartial(object.votingPeriod) : undefined;
     return message;
@@ -1055,7 +1055,7 @@ export const TallyParams = {
     return message;
   },
 
-  fromPartial(object: DeepPartial<TallyParams>): TallyParams {
+  fromPartial(object: Partial<TallyParams>): TallyParams {
     const message = createBaseTallyParams();
     message.quorum = object.quorum ?? new Uint8Array();
     message.threshold = object.threshold ?? new Uint8Array();

@@ -51,8 +51,9 @@ telescope({
       enabled: true,
       includePackageVar: false,
       typingsFormat: {
+        useDeepPartial: false,
         useExact: false,
-        timestamp: 'date',
+        timestamp: 'timestamp',
         duration: 'duration'
       }
     },
