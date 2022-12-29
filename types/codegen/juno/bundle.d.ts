@@ -1,59 +1,59 @@
-import * as _45 from "./mint/genesis";
-import * as _46 from "./mint/mint";
-import * as _47 from "./mint/query";
-import * as _71 from "./mint/query.rpc.query";
+import * as _79 from "./mint/genesis";
+import * as _80 from "./mint/mint";
+import * as _81 from "./mint/query";
+import * as _116 from "./mint/query.rpc.query";
 export declare namespace juno {
     const mint: {
-        QueryClientImpl: typeof _71.QueryClientImpl;
+        QueryClientImpl: typeof _116.QueryClientImpl;
         createRpcQueryExtension: (base: import("@cosmjs/stargate").QueryClient) => {
-            params(request?: _47.QueryParamsRequest): Promise<_47.QueryParamsResponse>;
-            inflation(request?: _47.QueryInflationRequest): Promise<_47.QueryInflationResponse>;
-            annualProvisions(request?: _47.QueryAnnualProvisionsRequest): Promise<_47.QueryAnnualProvisionsResponse>;
+            params(request?: _81.QueryParamsRequest): Promise<_81.QueryParamsResponse>;
+            inflation(request?: _81.QueryInflationRequest): Promise<_81.QueryInflationResponse>;
+            annualProvisions(request?: _81.QueryAnnualProvisionsRequest): Promise<_81.QueryAnnualProvisionsResponse>;
         };
         QueryParamsRequest: {
-            encode(_: _47.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryParamsRequest;
-            fromPartial(_: Partial<_47.QueryParamsRequest>): _47.QueryParamsRequest;
+            encode(_: _81.QueryParamsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _81.QueryParamsRequest;
+            fromPartial(_: Partial<_81.QueryParamsRequest>): _81.QueryParamsRequest;
         };
         QueryParamsResponse: {
-            encode(message: _47.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryParamsResponse;
-            fromPartial(object: Partial<_47.QueryParamsResponse>): _47.QueryParamsResponse;
+            encode(message: _81.QueryParamsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _81.QueryParamsResponse;
+            fromPartial(object: Partial<_81.QueryParamsResponse>): _81.QueryParamsResponse;
         };
         QueryInflationRequest: {
-            encode(_: _47.QueryInflationRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryInflationRequest;
-            fromPartial(_: Partial<_47.QueryInflationRequest>): _47.QueryInflationRequest;
+            encode(_: _81.QueryInflationRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _81.QueryInflationRequest;
+            fromPartial(_: Partial<_81.QueryInflationRequest>): _81.QueryInflationRequest;
         };
         QueryInflationResponse: {
-            encode(message: _47.QueryInflationResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryInflationResponse;
-            fromPartial(object: Partial<_47.QueryInflationResponse>): _47.QueryInflationResponse;
+            encode(message: _81.QueryInflationResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _81.QueryInflationResponse;
+            fromPartial(object: Partial<_81.QueryInflationResponse>): _81.QueryInflationResponse;
         };
         QueryAnnualProvisionsRequest: {
-            encode(_: _47.QueryAnnualProvisionsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryAnnualProvisionsRequest;
-            fromPartial(_: Partial<_47.QueryAnnualProvisionsRequest>): _47.QueryAnnualProvisionsRequest;
+            encode(_: _81.QueryAnnualProvisionsRequest, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _81.QueryAnnualProvisionsRequest;
+            fromPartial(_: Partial<_81.QueryAnnualProvisionsRequest>): _81.QueryAnnualProvisionsRequest;
         };
         QueryAnnualProvisionsResponse: {
-            encode(message: _47.QueryAnnualProvisionsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _47.QueryAnnualProvisionsResponse;
-            fromPartial(object: Partial<_47.QueryAnnualProvisionsResponse>): _47.QueryAnnualProvisionsResponse;
+            encode(message: _81.QueryAnnualProvisionsResponse, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _81.QueryAnnualProvisionsResponse;
+            fromPartial(object: Partial<_81.QueryAnnualProvisionsResponse>): _81.QueryAnnualProvisionsResponse;
         };
         Minter: {
-            encode(message: _46.Minter, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _46.Minter;
-            fromPartial(object: Partial<_46.Minter>): _46.Minter;
+            encode(message: _80.Minter, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _80.Minter;
+            fromPartial(object: Partial<_80.Minter>): _80.Minter;
         };
         Params: {
-            encode(message: _46.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _46.Params;
-            fromPartial(object: Partial<_46.Params>): _46.Params;
+            encode(message: _80.Params, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _80.Params;
+            fromPartial(object: Partial<_80.Params>): _80.Params;
         };
         GenesisState: {
-            encode(message: _45.GenesisState, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _45.GenesisState;
-            fromPartial(object: Partial<_45.GenesisState>): _45.GenesisState;
+            encode(message: _79.GenesisState, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+            decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _79.GenesisState;
+            fromPartial(object: Partial<_79.GenesisState>): _79.GenesisState;
         };
     };
     const ClientFactory: {
@@ -146,9 +146,9 @@ export declare namespace juno {
             };
             juno: {
                 mint: {
-                    params(request?: _47.QueryParamsRequest): Promise<_47.QueryParamsResponse>;
-                    inflation(request?: _47.QueryInflationRequest): Promise<_47.QueryInflationResponse>;
-                    annualProvisions(request?: _47.QueryAnnualProvisionsRequest): Promise<_47.QueryAnnualProvisionsResponse>;
+                    params(request?: _81.QueryParamsRequest): Promise<_81.QueryParamsResponse>;
+                    inflation(request?: _81.QueryInflationRequest): Promise<_81.QueryInflationResponse>;
+                    annualProvisions(request?: _81.QueryAnnualProvisionsRequest): Promise<_81.QueryAnnualProvisionsResponse>;
                 };
             };
         }>;
