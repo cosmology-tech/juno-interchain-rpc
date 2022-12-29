@@ -1,6 +1,6 @@
 {
-  "name": "daodao",
-  "version": "1.9.0",
+  "name": "interchain-rpc",
+  "version": "1.9.0-rc.0",
   "description": "daodao",
   "author": "Dan Lynch <pyramation@gmail.com>",
   "homepage": "https://github.com/cosmology-tech/daodao#readme",
