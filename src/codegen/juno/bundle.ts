@@ -1,14 +1,14 @@
-import * as _45 from "./mint/genesis";
-import * as _46 from "./mint/mint";
-import * as _47 from "./mint/query";
-import * as _71 from "./mint/query.rpc.query";
-import * as _74 from "./rpc.query";
+import * as _79 from "./mint/genesis";
+import * as _80 from "./mint/mint";
+import * as _81 from "./mint/query";
+import * as _116 from "./mint/query.rpc.query";
+import * as _121 from "./rpc.query";
 export namespace juno {
-  export const mint = { ..._45,
-    ..._46,
-    ..._47,
-    ..._71
+  export const mint = { ..._79,
+    ..._80,
+    ..._81,
+    ..._116
   };
-  export const ClientFactory = { ..._74
+  export const ClientFactory = { ..._121
   };
 }
