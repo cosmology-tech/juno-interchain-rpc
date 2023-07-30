@@ -1,4 +1,4 @@
-# daodao
+# juno interchain RPC
 
 <p align="center">
   <a href="https://github.com/cosmology-tech/daodao">
